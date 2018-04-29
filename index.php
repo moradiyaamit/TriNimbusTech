@@ -2,6 +2,7 @@
 <html>
 <header><title>Technical Assesment</title></header>
 <body>
+        <p> Hi Updated </p>
 
 <?php
 $servername='mytestdb.co32qnak9rdd.ca-central-1.rds.amazonaws.com';
