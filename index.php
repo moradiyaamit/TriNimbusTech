@@ -6,10 +6,10 @@
         <p> This is again updated </p>
 
 <?php
-$servername='mytestdb.co32qnak9rdd.ca-central-1.rds.amazonaws.com';
+$servername='testdb.chntrgvaknsf.ca-central-1.rds.amazonaws.com';
 $username='rdsmaster';
-$password='master123';
-$dbname='testdb';
+$password='abcd1234';
+$dbname='person';
 $dbport='3306';
 // Create connection
 
@@ -21,7 +21,7 @@ if (!$conn)
         die("Connection failed: " .  mysqli_connect_error());
         }
 
-        $sql = "SELECT * FROM Persons";
+        $sql = "SELECT * FROM info";
 $result = mysqli_query($conn,$sql);
 
 if(mysqli_num_rows($result) > 0)
@@ -32,7 +32,7 @@ echo "<table><tr><td>PersonID</td><td>LastName</td><td>FirstName</td><td>Address
         // output data of each row
         while($row = mysqli_fetch_assoc($result))
         {
-                echo "<tr> <td>" . $row["PersonID"]. "</td><td>" . $row["LastName"] . "</td><td>" .  $row["FirstName"] . "</td><td>".$row["Address"]."</td><td>".$row["City"]."</td></tr>";
+                echo "<tr> <td>" . $row["id"]. "</td><td>" . $row["name"] . "</td><td>" .  $row["city"] . "</td><td>".$row["country"]."</td></tr>";
         }
         echo "</table>";
 }
